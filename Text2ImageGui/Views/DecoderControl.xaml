@@ -1,0 +1,51 @@
+﻿<UserControl
+    x:Class="Text2ImageGui.Views.DecoderControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Text2ImageGui.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="816"
+    Height="461"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBox
+            Name="TextBoxImport"
+            Margin="10,10,10,71"
+            materialDesign:HintAssist.Hint="转换的文本，右击以导入图片"
+            AcceptsReturn="True"
+            Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Auto">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Click="MenuItem_Click" Header="浏览图片" />
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+
+        <TextBox
+            Name="TextBoxExport"
+            Margin="10,405,175,10"
+            materialDesign:HintAssist.Hint="文本保存路径"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Click="MenuItem_Click_1" Header="浏览保存路径" />
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+
+        <Button
+            Height="Auto"
+            Margin="646,405,10,10"
+            Click="Button_Click"
+            Content="执行转换"
+            Style="{StaticResource MaterialDesignOutlinedButton}" />
+
+        <materialDesign:Snackbar Height="50" Name="StatSnackBar">
+            <materialDesign:SnackbarMessage Content="转换完成" ActionContent="好的" ActionClick="SnackbarMessage_OnActionClick" />
+        </materialDesign:Snackbar>
+    </Grid>
+</UserControl>

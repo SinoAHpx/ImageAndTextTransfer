@@ -1,0 +1,140 @@
+﻿<UserControl
+    x:Class="Text2ImageGui.Views.HomeControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Text2ImageGui.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="816"
+    Height="461"
+    mc:Ignorable="d">
+    <materialDesign:DialogHost>
+        <Grid>
+            <TextBlock
+                Margin="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Foreground="{StaticResource MaterialDesignShadowBrush}"
+                Style="{StaticResource MaterialDesignHeadline3TextBlock}"
+                Text="欢迎使用图片文本互转工具" />
+            <Button
+                Margin="112,115.96,112,0"
+                VerticalAlignment="Top"
+                Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                CommandParameter="{x:Static Dock.Left}"
+                Content="开始使用"
+                Style="{StaticResource MaterialDesignFlatButton}" />
+
+            <materialDesign:Card
+                Width="388"
+                Margin="10,212.5,0,10"
+                HorizontalAlignment="Left">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="139*" />
+                        <ColumnDefinition Width="241*" />
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Margin="-135.334,-47.334,0,-14"
+                        Source="/Media/ET.jpg"
+                        Stretch="UniformToFill" />
+
+                    <Grid Grid.Column="1">
+                        <TextBlock
+                            Margin="10"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                            Text="关于此软件" />
+
+                        <TextBlock
+                            Height="54.48"
+                            Margin="10,45.48,10,127.54"
+                            VerticalAlignment="Center"
+                            Foreground="{StaticResource MaterialDesignShadowBrush}"
+                            TextWrapping="Wrap">
+                            <Run Text="算法来自于PiliPili up主" />
+                            <Hyperlink NavigateUri="https://space.bilibili.com/39665558" RequestNavigate="Hyperlink_RequestNavigate">偶尔有点小迷糊</Hyperlink>
+                            <Run Text="的视频" />
+                            <Hyperlink NavigateUri="https://www.bilibili.com/video/BV1Ai4y1V7rg" RequestNavigate="Hyperlink_RequestNavigate">BV1Ai4y1V7rg</Hyperlink>
+                            <Run Text="中的Python代码。" />
+                        </TextBlock>
+
+                        <Button
+                            Margin="127.574,196.5,10,10"
+                            Click="Button_Click"
+                            Style="{StaticResource MaterialDesignOutlinedButton}"
+                            Tag="https://github.com/AHpxChina">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Github" />
+                                <TextBlock Text="Github" />
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            Margin="10,196.5,129,10"
+                            Click="Button_Click"
+                            Style="{StaticResource MaterialDesignOutlinedButton}"
+                            Tag="https://blog.ahpxchina.cn">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Blog" />
+                                <TextBlock Text="博客" />
+                            </StackPanel>
+                        </Button>
+                        <TextBlock
+                            Height="54.48"
+                            Margin="10,95.46,10,77.56"
+                            VerticalAlignment="Center"
+                            Foreground="{StaticResource MaterialDesignShadowBrush}"
+                            TextWrapping="Wrap">
+                            <Run Text="本软件的开发者是" />
+                            <Hyperlink NavigateUri="https://space.bilibili.com/329236700" RequestNavigate="Hyperlink_RequestNavigate">AHpx</Hyperlink>
+                            <Run Text="，将其翻译成C#代码并且制作了GUI。" />
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </materialDesign:Card>
+            <materialDesign:Card
+                Width="387"
+                Margin="419,212.5,0,10"
+                HorizontalAlignment="Left">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="139*" />
+                        <ColumnDefinition Width="241*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Margin="10" Source="/Media/github-1.png" />
+                    <Grid Grid.Column="1">
+                        <TextBlock
+                            Margin="10"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                            Text="完全开源" />
+
+                        <TextBlock
+                            Height="103.813"
+                            Margin="10,45.48,10,78.207"
+                            VerticalAlignment="Center"
+                            Foreground="{StaticResource MaterialDesignShadowBrush}"
+                            TextWrapping="Wrap">
+                            <Run Text="由于核心算法并非原创，所以此软件将会以" />
+                            <Hyperlink NavigateUri="http://www.wtfpl.net/" RequestNavigate="Hyperlink_RequestNavigate">WTFPL</Hyperlink>
+                            <Run Text="协议开源并提交到" />
+                            <Hyperlink NavigateUri="https://github.com/AHpxChina/ImageAndTextTransfer" RequestNavigate="Hyperlink_RequestNavigate">Github</Hyperlink>
+                            <Run Text="。当然，这个项目的GUI仍然是原创的，遵循Material Design设计标准。所以，如果你觉得这个软件做的很棒的话，请给我钱（" />
+                        </TextBlock>
+
+                        <Button
+                            Margin="122,197,10,10"
+                            Click="Button_Click_1"
+                            Style="{StaticResource MaterialDesignOutlinedButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Donate" />
+                                <TextBlock Text="赞赏码" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </materialDesign:Card>
+        </Grid>
+    </materialDesign:DialogHost>
+</UserControl>
